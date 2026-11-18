@@ -10,7 +10,6 @@
     --color-muted:#5c6670;
     --color-link-click:#fffefee1;
 
-    --font-headline:"Gill Sans Ultra Bold", "Gill Sans", Calibri, sans-serif;
     --font-display:Oswald,"Arial Narrow",sans-serif;
     --font-body: Arial, sans-serif;
     --text-xs:0.70;
@@ -46,7 +45,8 @@
 @media (prefers-reduced-motion:no-preference){
     html{
     scroll-behavior:smooth;
-}
+    }
+
 
 body{
     margin:0;
@@ -108,10 +108,10 @@ main{
     margin:auto;
     padding:var(--space-3);
 }
-.article{
+.story{
     min-width:0;
 }
-.article section{
+.story section{
     display:flow-root;
     margin-block:3rem;
     scroll-margin-block-start:6rem;
