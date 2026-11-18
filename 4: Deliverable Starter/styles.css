@@ -1,12 +1,32 @@
+/* Design system 4/*/
 :root{
-    --color-text:#404040;
+    
+    --color-text: #404040;
     --color-surface:#fff;
-    --color-action:#8c1d40;
-    --color-accent:#ffc627;
-    --color-border:#d0d0d0;
+    --color-activated:#fff;
+    --color-action:#12284B;
+    --color-accent:#ffc52f;
+    --color-border:#ffc52f;
     --color-muted:#5c6670;
+    --color-link-click:#fffefee1;
+
+    --font-headline:"Gill Sans Ultra Bold", "Gill Sans", Calibri, sans-serif;
+    --font-display:Oswald,"Arial Narrow",sans-serif;
+    --font-body: Arial, sans-serif;
+
+    --border-width:40px;
+    --border:(--border-width) solid var(--color-border);
+    --border-radius:40px;
+
+    --space-2:.5rem;
     --space-3:1rem;
+    --space-4:1.5rem;
+    --space-5:2rem;
+    --space-6:2.5rem;
+
+    --radius-sm:.25rem;
     --radius:.5rem;
+    --radius-lg:999px;
     --measure:68ch;
     --layer-base:0;
     --layer-raised:10;
@@ -16,6 +36,7 @@
 *,*::before,*::after{
     box-sizing:border-box;
 }
+@media ();
 html{
     scroll-behavior:smooth;
 }
@@ -23,19 +44,24 @@ body{
     margin:0;
     color:var(--color-text);
     background:var(--color-surface);
-    font-family:Arial,sans-serif;
+    font-family:var(--font-body);
     line-height:1.6;
 }
 
 h1, h2{
-    font-family: var();
+    font-family: var(--font-display);
     overflow-wrap: break-word;
+}
+.feature-header{
+    position: relative;
+    background: var(--color-action);
+    color: var(--color-active);
 }
 .feature-header{
     position:relative;
     padding:clamp(2rem,7vw,6rem);
     background:var(--color-action);
-    color:#fff;
+    color: var(--color-active);
 }
 .eyebrow{
     color:var(--color-accent);
@@ -46,17 +72,17 @@ h1, h2{
     font-size:1.25rem;
 }
 .issue-badge{
-    position:absolute;
-    inset-block-start:1rem;
-    inset-inline-end:1rem;
+
+    display:inline-block;
     padding:.5rem;
     background:var(--color-accent);
+    font-weight:var(--font-display);
     color:#191919;
 }
 main{
     display:grid;
-    gap:2rem;
-    max-width:72rem;
+    gap:var(--space-4);
+    max-width:var();
     margin:auto;
     padding:var(--space-3);
 }
@@ -73,9 +99,15 @@ article section{
     padding:1rem;
     border:1px solid var(--color-border);
 }
+.story-guide ul{
+    display:flex;
+    flex-wrap: flex;
+    padding:0;
+}
 .story-guide a{
     display:block;
-    padding:.4rem;
+    padding:var(--space-2);
+    border-radius:var(--radius-sm);
 }
 .feature-figure{
     position:relative;
@@ -90,6 +122,7 @@ img{
     height:auto;
 }
 .pull-quote{
+    max-width: var(--measure);
     margin:2rem 0;
     padding:1rem;
     border-inline-start:.4rem solid var(--color-accent);
