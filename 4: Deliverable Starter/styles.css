@@ -100,6 +100,7 @@ a:hover{
     background: var(--color-action);
     color: var(--color-accent);
     padding:var(--space-6);
+    margin:0;
     
 }
 
@@ -118,8 +119,7 @@ a:hover{
 
     z-index: var(--layer-overlay);
     padding:var(--space-2);
-    background:var(--color-accent);
-    color:var(--color-action);
+    color:var(--color-accent);
 
 
 }
