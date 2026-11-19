@@ -148,7 +148,7 @@ main{
 .story section{
     display:flow-root;
     margin-block-end: var(--space-5);
-    scroll-margin-block-start:var(--space-4)
+    scroll-margin-block-start:var(--space-4);
 
 }
 .story-guide{
@@ -197,7 +197,7 @@ img{
     font-size:var(--text-l);
 }
 .sources{
-    color:var(muted);
+    color:var(color-muted);
 
 }
 .shape-portrait{
@@ -236,8 +236,8 @@ img{
     display:grid;
     gap:var(--space-3);
     padding:0;
-    margin-block:var(--space-5)0;
-    font-size:var(--text-l)
+    margin-block:var(--space-5) 0;
+    font-size:var(--text-l);
 }
 .historic-numbers strong{
     display:block;
@@ -258,7 +258,7 @@ img{
         grid-template-columns:var(--sidebar)
      minmax(0,1fr);
 }
-    .storyguide ul{
+    .story-guide ul{
         flex-direction:column;
     }
     .story-guide{
@@ -272,7 +272,7 @@ img{
         right:var(--space-3);
     }
     .feature-header{
-        padding-top:4m;
+        padding-top:4rem;
     }
     .feature-figure figcaption{
         position:relative;
@@ -282,21 +282,16 @@ img{
     }
 }
 
-@media (min-width:40rem){
+@media (min-width:52rem){
     .feature-header{
         padding-inline:var(--space-6);
-    }
-    .issue-badge{
-        position: absolute;
-        inset-block-start: var(--space-4);
     }
 
     }
     .shape-portrait{
         float:left;
         width:min(45%,var()
-    }
-
+}
     .pull-quote{
         position:relative;
         z-index:var(--layer-raised);
