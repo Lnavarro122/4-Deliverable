@@ -1,55 +1,121 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Composition Plan</title>
-        <style>
-            body{
-                font-family:Arial,sans-serif;
-                line-height:1.5;
-                max-width:90rem;
-                margin:auto;
-                padding:1rem;
-                color:#191919;
-                }
-            table{
-                width:100%;
-                border-collapse:collapse;
-                }
-            th,td{
-                padding:.6rem;
-                border:1px solid #999;
-                text-align:left;
-                vertical-align:top;
-                }
-            th{
-                background:#f1f1f1;
-                }
-        </style>
-        </head>
-        <body>
-            <h1>L6 · Composition Plan</h1>
-            <p>Complete one row for every positioned, layered, clipped, rounded, or shape-wrapped element. Duplicate rows as needed.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>What went wrong</th>
-                        <th>Why it did</th>
-                        <th>How I fixed it</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Example only</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                    </tr>
-                </tbody>
-            </table>
-        </body>
-        </html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Composition Plan, Fallback and Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 90rem;
+            margin: auto;
+            padding: 1rem;
+            color: #191919;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: .6rem;
+            border: 1px solid #999;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="back" href="index.html"> Back to the story</a>
+    <h1>L6 · Composition Plan</h1>
+    <p>Complete one row for every positioned, layered, clipped, rounded, or shape-wrapped element. Duplicate rows as
+        needed.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Element</th>
+                <th>Content purpose</th>
+                <th>Normal-flow baseline</th>
+                <th>Chosen technique and why</th>
+                <th>Containing block / stacking context</th>
+                <th>Fallback or disengagement</th>
+                <th>Required test</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>pull quote</td>
+                <td>To provide a quote about the city team connection.</td>
+                <td>Yellow line on the beginning paragraph.</td>
+                <td>relative position so it the element quote didn't interact with anything else.</td>
+                <td>It stacking and layer raised</td>
+                <td>disengaged</td>
+                <td>320, 768, 1280px scroll test</td>
+            </tr>
+            <tr>
+                <td>issue badge</td>
+                <td>"World Series Champs October 28th, 2026"</td>
+                <td>Anchored detail in box</td>
+                <td>position: absolute so it stays circular in corner.</td>
+                <td>no stacking</td>
+                <td>disengagement</td>
+                <td>320 768 1280px </td>
+            </tr>
+            <tr>
+                <td>story guide</td>
+                <td>A small white box</td>
+                <td>Add in a guide on the side</td>
+                <td>Sticky because the reader could still switch stories while reading.</td>
+                <td>layer sticky</td>
+                <td>disengagement</td>
+                <td>scrolling down 320 768 1260px</td>
+            </tr>
+            <tr>
+                <td>skip link</td>
+                <td>Allows users to go right away to stories</td>
+                <td>Empty in the header before</td>
+                <td>Absolute position</td>
+                <td>contained block, layer overlay</td>
+                <td>disengagement</td>
+                <td>Test it by 320px and checking if it goes away</td>
+            </tr>
+            <tr>
+                <td>feature figure</td>
+                <td>Square with soft edges and blue triangle and blue circle inside</td>
+                <td>outside:circle(%50) </td>
+                <td>Floats with flow root</td>
+                <td>Fallback</td>
+                <td>On mobile</td>
+            </tr>
+            <tr>
+                <td>main</td>
+                <td>2026 stats and page columns</td>
+                <td>right below the pull quote</td>
+                <td>auto fit grid</td>
+                <td>neither</td>
+                <td>disengaged</td>
+                <td>zoom and css disabled</td>
+            </tr>
+            <h2>MDN references</h2><h3>Works on all platforms</h3>
+            <p><strong>border-radius</strong> MDN border-radius shape becomes sharper </p>
+            <p><strong>Oswald</strong>  MDN:font-family  Falls back to sans serif</p>
+            <p><strong>position</strong> MDN:position</p>
+            <p><strong>flexbox</strong> MDN flexbox</p>
+            <p><strong>transform</strong>transform for skip link "MDN:transform</p>
+            <p><strong>Z-index</strong>Z-index  MDN:z-index</p>
+            <p><strong>@support</strong> MDN:support MDN:media if not supported than skipped </p>
+
+        </tbody>
+    </table>
+</body>
+
+</html>

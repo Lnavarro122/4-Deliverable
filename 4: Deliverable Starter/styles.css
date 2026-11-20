@@ -35,6 +35,7 @@
     --space-5:2rem;
     --space-6:2.5rem;
 
+
     --radius-sm:.25rem;
     --radius:.5rem;
     --radius-lg:999px;
@@ -124,10 +125,9 @@ a:hover{
 
 }
 .issue-badge{
-    position:absolute;
-    inset-block-start:1rem;
-    inset-inline-end:1rem;
-    margin:0;
+    position:static;
+    display:inline-block;
+    margin-top:0;
     padding:var(--space-2);
     background:var(--color-accent);
     border-radius: var(--radius-lg);
@@ -188,16 +188,16 @@ img{
 
 .pull-quote{
     max-width: var(--measure);
-    margin:2rem 0;
-    padding:var(--space-4);
-    border-inline-start:.4rem solid var(--color-accent);
+    padding:var(--space-5);
+    border:10px solid var(--color-action);
     background:var(--color-extra);
+    border-radius:var(--radius-lg);
     color:var(--color-action);
-    line-height: var(--line-height-tight);
     font-size:var(--text-l);
+    
 }
 .sources{
-    color:var(color-muted);
+    color:var(--color-muted);
 
 }
 .shape-portrait{
@@ -282,7 +282,7 @@ img{
     }
 }
 
-@media (min-width:52rem){
+@media (min-width:42rem){
     .feature-header{
         padding-inline:var(--space-6);
     }
@@ -290,7 +290,7 @@ img{
     }
     .shape-portrait{
         float:left;
-        width:min(45%,var()
+        width:auto,var(--radius-rnd);
 }
     .pull-quote{
         position:relative;
@@ -301,7 +301,7 @@ img{
     @supports (shape-outside:circle(50%)){
         .shape-portrait{
             float:inline-start;
-            shape-outside:circle(50%);
+
             shape-margin:var(--space-3);
         }
         }
